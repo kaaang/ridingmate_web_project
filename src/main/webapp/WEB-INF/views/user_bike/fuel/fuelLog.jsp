@@ -16,37 +16,37 @@
                 <h3 class="mbr-section-title mb-5 align-center mbr-fonts-style display-2"><strong>연비 정보</strong></h3>
 
                 <div class="countdown-cont align-center mb-5">
-                    <div class="daysCountdown col-xs-3 col-sm-3 col-md-3" title="Days"></div>
-                    <div class="hoursCountdown col-xs-3 col-sm-3 col-md-3" title="Hours"></div>
-                    <div class="minutesCountdown col-xs-3 col-sm-3 col-md-3" title="Minutes"></div>
-                    <div class="secondsCountdown col-xs-3 col-sm-3 col-md-3" title="Seconds"></div>
-                    <div class="countdown" data-due-date="2021/01/01"></div>
+                    <div class="row">
+                    	<div class="col-3">
+                    		<div class="number-wrap">
+                    			<span class="number display-2"><b>30</b></span>
+                    			<span mbr-text class="period display-7">현재주유량</span>
+                    		</div>
+                    	</div>
+                    	<div class="col-3">
+                    		<div class="number-wrap">
+                    			<span class="number display-2"><b>30</b></span>
+                    			<span mbr-text class="period display-7">현재주유량</span>
+                    		</div>
+                    	</div>
+                    	<div class="col-3">
+                    		<div class="number-wrap">
+                    			<span class="number display-2"><b>30</b></span>
+                    			<span mbr-text class="period display-7">현재주유량</span>
+                    		</div>
+                    	</div>
+                    	<div class="col-3">
+                    		<div class="number-wrap">
+                    			<span class="number display-2"><b>30</b></span>
+                    			<span mbr-text class="period display-7">현재주유량</span>
+                    		</div>
+                    	</div>
+                    </div>
                 </div>
                 <p class="mbr-text mb-5 align-center mbr-fonts-style display-7">
                     Follow us online to find out when we launch.
                 </p>
-                <div class="icons-menu row justify-content-center display-7">
-
-
-
-
-                    <div class="soc-item col-auto">
-                        <a href="https://instagram.com/mobirise" target="_blank" class="social__link">
-                            <span class="mbr-iconfont socicon-instagram socicon"></span>
-                        </a>
-                    </div><div class="soc-item col-auto">
-                    <a href="https://twitter.com/mobirise" target="_blank" class="social__link">
-                        <span class="mbr-iconfont socicon-twitter socicon"></span>
-                    </a>
-                </div><div class="soc-item col-auto">
-                    <a href="https://facebook.com/Mobirise/" target="_blank" class="social__link">
-                        <span class="mbr-iconfont socicon socicon-facebook"></span>
-                    </a>
-                </div><div class="soc-item col-auto">
-                    <a href="https://youtube.com/c/mobirise" target="_blank" class="social__link">
-                        <span class="mbr-iconfont socicon socicon-youtube"></span>
-                    </a>
-                </div></div>
+             
 
             </div>
         </div>
@@ -83,11 +83,6 @@
                     </div>
                 </div>
             </div>
-
-
-
-
-
 
 
 

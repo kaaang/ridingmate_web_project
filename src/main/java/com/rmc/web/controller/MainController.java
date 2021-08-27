@@ -10,5 +10,44 @@ public class MainController {
     public String index(){
         return "index";
     }
+    
+    //내 바이크 리스트
+    @GetMapping("/userbike")
+    public String userBike() {
+    	return "user_bike/user_bike_list";
+    }
+    @GetMapping("/userbike/fuelLog")
+    public String fuelLog() {
+    	return "user_bike/fuel/fuelLog";
+    }
+    @GetMapping("/userbike/maintenanceLog")
+    public String maintenanceLog() {
+    	return "user_bike/maintenance/maintenanceLog";
+    }
+    
+    //중고마켓
+    @GetMapping("/market")
+    public String market() {
+    	return "";
+    }
+    
+    //고객센터
+    @GetMapping("/cs")
+    public String cs() {
+    	return "cs/csForm";
+    }
+    
+    //로그인폼
+    @GetMapping("/loginForm")
+    public String loginForm() {
+    	return "user/loginForm";
+    }
+    
+    //회원가입폼
+    @GetMapping("/joinForm")
+    public String joinForm() {
+    	return "user/joinForm";
+    }
+    
 
 }
