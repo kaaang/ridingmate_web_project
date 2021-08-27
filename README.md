@@ -10,6 +10,17 @@
   + Password : 73kf22
 
 
+---
+# 개발 환경
++ 언어
+  + JAVA Script, JAVA
++ 기술
+  + Spring Boot, JSP, JPA, Hibernate, maven, loombok, yml
++ 툴 
+  + Intellij, Eclipse, Git
++ DataBase
+  + MySQL, MySQL Workbench,
+  
 
 
 
@@ -20,3 +31,7 @@
   + erd 작성하기
   + 바이크 데이터 가공 완료
   + 웹 프론트단 제작 회의
++ [2021.08.27]
+  + 웹 프론트 제작완료(입력 폼은 부트스트랩으로 가져와서 진행 예정)
+  + JSP전환 완료
+  + 각 페이지 Controller 등록 완료
