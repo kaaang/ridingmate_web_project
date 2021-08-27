@@ -18,33 +18,37 @@
 		</div>
 		<div class="row justify-content-center mt-4">
 			<div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-				<form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler" data-form-title="Form Name">
-					<input type="hidden" name="email" data-form-email="true" value="XKsmFTKoAgdjYt1DPo6DQl7nWSmJPKzKQlgaKArJvgFVllHKcCpAC9BPs/GDQNghhRly232WyfdPARvQgNst1bdxcCYeTEjuAmjbafBARQPRvdtNFFzgQuRDOKUZ/J1K">
-					<div class="row">
-						<div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling out the form!</div>
-						<div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some problem!</div>
-					</div>
+				<form>
 					<div class="dragArea row">
-						<div class="col-md col-sm-12 form-group mb-3" data-for="name">
-							<input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control" value="" id="name-form5-x">
+						<div class="col-12 form-group mb-3" data-for="name">
+							<input type="text" name="user_name" placeholder="이름" class="form-control" value="" id="user_name">
 						</div>
-						<div class="col-md col-sm-12 form-group mb-3" data-for="email">
-							<input type="email" name="email" placeholder="E-mail" data-form-field="email" class="form-control" value="" id="email-form5-x">
+						<div class="col-12 form-group mb-3" data-for="name">
+							<input type="text" name="user_id" placeholder="아이디" class="form-control" value="" id="user_id">
 						</div>
-						<div class="col-12 form-group mb-3" data-for="url">
-							<input type="url" name="url" placeholder="Your Site" data-form-field="url" class="form-control" value="" id="url-form5-x">
+						<div class="col-12 form-group mb-3" data-for="name">
+							<input type="password" name="password" placeholder="비밀번호" class="form-control" value="" id="password">
 						</div>
-						<div class="col-12 form-group mb-3" data-for="textarea">
-							<textarea name="textarea" placeholder="Message" data-form-field="textarea" class="form-control" id="textarea-form5-x"></textarea>
+						<div class="col-12 form-group mb-3" data-for="name">
+							<input type="text" name="nickname" placeholder="닉네임" class="form-control" value="" id="nickname">
 						</div>
-						<div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-							<button type="submit" class="btn btn-primary display-4">Send message</button>
+						<div class="col-12 form-group mb-3" data-for="name">
+							<input type="text" name="phone" placeholder="핸드폰 번호" class="form-control" value="" id="phone">
 						</div>
+						<div class="col-12 form-group mb-3" data-for="email">
+							<input type="email" name="email" placeholder="E-mail" class="form-control" value="" id="email">
+						</div>
+<%--						<div class="col-12 form-group mb-3" data-for="textarea">--%>
+<%--							<textarea name="textarea" placeholder="Message" data-form-field="textarea" class="form-control" id="textarea-form5-x"></textarea>--%>
+<%--						</div>--%>
 					</div>
 				</form>
+				<div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
+					<button id="btn-join" class="btn btn-primary display-4">회원가입</button>
+				</div>
 			</div>
 		</div>
 	</div>
 </section>
-
+<script src="/js/user.js"></script>
 <%@include file="../layout/footer.jsp"%>
