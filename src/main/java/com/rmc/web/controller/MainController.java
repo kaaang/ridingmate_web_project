@@ -37,17 +37,7 @@ public class MainController {
     	return "cs/csForm";
     }
     
-    //로그인폼
-    @GetMapping("/loginForm")
-    public String loginForm() {
-    	return "user/loginForm";
-    }
-    
-    //회원가입폼
-    @GetMapping("/joinForm")
-    public String joinForm() {
-    	return "user/joinForm";
-    }
+
     
 
 }
