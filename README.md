@@ -16,6 +16,7 @@
   + JAVA Script, JAVA
 + 기술
   + Spring Boot, JSP, JPA, Hibernate, maven, loombok, yml
+  + 로그인 : Spring security
 + 툴 
   + Intellij, Eclipse, Git
 + DataBase
