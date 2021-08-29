@@ -23,12 +23,12 @@ public class User {
     private int id;
 
     @Column(nullable = false, length = 50)
-    private String user_name;
+    private String userstring;
 
     @Column(nullable = false, length = 100, unique = true)
-    private String user_id;
+    private String username;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 150)
     private String password;
 
     @Column(nullable = false, length = 50)

@@ -21,10 +21,10 @@
 				<form>
 					<div class="dragArea row">
 						<div class="col-12 form-group mb-3" data-for="name">
-							<input type="text" name="user_name" placeholder="이름" class="form-control" value="" id="user_name">
+							<input type="text" name="userstring" placeholder="이름" class="form-control" value="" id="userstring">
 						</div>
 						<div class="col-12 form-group mb-3" data-for="name">
-							<input type="text" name="user_id" placeholder="아이디" class="form-control" value="" id="user_id">
+							<input type="text" name="username" placeholder="아이디" class="form-control" value="" id="username">
 						</div>
 						<div class="col-12 form-group mb-3" data-for="name">
 							<input type="password" name="password" placeholder="비밀번호" class="form-control" value="" id="password">

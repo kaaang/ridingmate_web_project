@@ -18,24 +18,17 @@
         </div>
         <div class="row justify-content-center mt-4">
             <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
-                <form action="https://mobirise.eu/" method="POST" class="mbr-form form-with-styler mx-auto" data-form-title="Form Name"><input type="hidden" name="email" data-form-email="true" value="tdwN2D04BWp9MZHbKK+bf9kmKKJ/o303TiJ8fkr552RhctPIzk4UPhwvILm6Ja2VGvHxYFBQSxXYMY1ngV3c0aohkTDAfFXiFLE7gKi7omq7+eyh73Lwx14YRajK6/ge">
-                    <p class="mbr-text mbr-fonts-style align-center mb-4 display-7">환영합니다</p>
-                    <div class="row">
-                        <div hidden="hidden" data-form-alert="" class="alert alert-success col-12">Thanks for filling
-                            out the form!</div>
-                        <div hidden="hidden" data-form-alert-danger="" class="alert alert-danger col-12">Oops...! some
-                            problem!</div>
-                    </div>
+                <form action="/auth/loginProc" method="POST" class="mbr-form form-with-styler mx-auto">
                     <div class="dragArea row">
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="name">
-                            <input type="text" name="name" placeholder="Name" data-form-field="name" class="form-control" value="" id="name-form7-s">
+                            <input type="text" name="username" placeholder="ID" data-form-field="name" class="form-control" id="username">
                         </div>
-                        <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="email">
-                            <input type="email" name="email" placeholder="Email" data-form-field="email" class="form-control" value="" id="email-form7-s">
+                        <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="password">
+                            <input type="password" name="password" placeholder="Password" data-form-field="email" class="form-control" id="password">
                         </div>
 
                         <div class="col-auto mbr-section-btn align-center">
-                            <button type="submit" class="btn btn-primary display-4">Submit</button>
+                            <button type="btn-login" class="btn btn-primary display-4">Submit</button>
                         </div>
                     </div>
                 </form>

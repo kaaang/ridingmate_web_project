@@ -7,8 +7,8 @@ let index={
 
     join:function (){
         let data = {
-            user_name:$("#user_name").val(),
-            user_id:$("#user_id").val(),
+            userstring:$("#userstring").val(),
+            username:$("#username").val(),
             password:$("#password").val(),
             nickname:$("#nickname").val(),
             phone:$("#phone").val(),
