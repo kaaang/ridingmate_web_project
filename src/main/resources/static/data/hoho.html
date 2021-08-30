@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="/data.js"></script>
+    <script>
+        let count=0;
+        let totalcount=1;
+
+
+
+
+        function goodajax() {
+            $.ajax({
+                type:"POST",
+                url:"http://localhost:8000/auth/data",
+                data:JSON.stringify(data[0]),
+                contentType:"application/json;charset=utf-8",
+                dataType:"JSON"
+            }).done(function (resp) {
+                console.log(JSON.stringify(data[0]));
+                count++;
+                if(count==totalcount){
+                    clearInterval(Loof);
+                }
+
+            }).fail(function (err) {
+                console.log("no");
+                clearInterval(Loof);
+            })
+        }
+        var Loof = setInterval(function () {
+            goodajax();
+        },10);
+        goodajax();
+    </script>
+</head>
+<body>
+
+</body>
+</html>

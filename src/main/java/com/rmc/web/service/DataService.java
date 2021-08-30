@@ -30,18 +30,18 @@ public class DataService {
 
 
         BikeCompany bikeCompany =bikeCompanyRepository.findByCompany(bike_spec.getCompany()).orElseGet(()->{
-            return new BikeCompany();
+            BikeCompany company = BikeCompany.builder().company(bike_spec.getCompany()).build();
+            bikeCompanyRepository.save(company);
+            return company;
         });
-        bikeCompany.setCompany(bike_spec.getCompany());
-        bikeCompanyRepository.save(bikeCompany);
+
 
 
         BikeModel bikeModel = bikeModelRepository.findByModel(bike_spec.getModel()).orElseGet(()->{
-           return new BikeModel();
+            BikeModel model = BikeModel.builder().model(bike_spec.getModel()).bikeCompany(bikeCompany).build();
+            bikeModelRepository.save(model);
+            return model;
         });
-        bikeModel.setModel(bike_spec.getModel());
-        bikeModel.setBikeCompany(bikeCompany);
-        bikeModelRepository.save(bikeModel);
 
 
         bike_spec.setBikeModel(bikeModel);
