@@ -41,12 +41,16 @@
 	<link rel="preload" as="style" href="/assets/mobirise/css/mbr-additional.css">
 	<link rel="stylesheet"  href="/assets/mobirise/css/customCss.css" type="text/css">
 	<link rel="stylesheet" href="/assets/mobirise/css/mbr-additional.css" type="text/css">
+	<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
 
 
 
 
 </head>
 <body>
+
+
 
 	<section data-bs-version="5.1" class="menu menu2 cid-sHcdQkIXSP" once="menu" id="menu2-t">
 
