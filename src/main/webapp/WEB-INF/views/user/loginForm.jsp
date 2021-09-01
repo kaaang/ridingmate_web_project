@@ -13,11 +13,11 @@
     <div class="container">
         <div class="mbr-section-head">
             <h3 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-                <strong>로그인</strong></h3>
-
+                <strong>로그인</strong>
+            </h3>
         </div>
         <div class="row justify-content-center mt-4">
-            <div class="col-lg-8 mx-auto mbr-form" data-form-type="formoid">
+            <div class="col-lg-10 mx-auto mbr-form" data-form-type="formoid">
                 <form action="/auth/loginProc" method="POST" class="mbr-form form-with-styler mx-auto">
                     <div class="dragArea row">
                         <div class="col-lg-12 col-md-12 col-sm-12 form-group mb-3" data-for="name">
@@ -27,8 +27,11 @@
                             <input type="password" name="password" placeholder="Password" data-form-field="email" class="form-control" id="password">
                         </div>
 
+						<c:if test="${param.error}">
+            				<p style="color:red">${exception }</p>
+            			</c:if>
                         <div class="col-auto mbr-section-btn align-center">
-                            <button type="btn-login" class="btn btn-primary display-4">Submit</button>
+                            <button id="btn-login" class="btn btn-primary display-4">로그인</button>
                         </div>
                     </div>
                 </form>
