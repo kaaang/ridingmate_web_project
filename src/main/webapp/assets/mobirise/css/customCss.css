@@ -1,0 +1,38 @@
+/*이용약관 스타일  */
+
+ul>li {
+	list-style: none;
+}
+ul{
+	padding-inline-start: 0px;
+}
+
+.checkBox, .checkBox>ul {
+	position: relative;
+}
+
+.checkBox>ul>li {
+	float: left;
+}
+
+.checkBox>ul>li:first-child {
+	width: 85%;
+	padding: 15px;
+	font-size: 1.2rem;
+	color: #000000;
+}
+
+
+.checkBox>ul>li:nth-child(2) {
+	position: absolute;
+	top: 50%;
+	right: 30px;
+	margin-top: -12px;
+}
+
+/*커스텀 스타일  */
+.csLabel{
+	padding:10px;
+}
+
+

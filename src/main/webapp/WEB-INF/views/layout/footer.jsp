@@ -15,7 +15,7 @@
             <div class="col-6 col-lg-3">
                 <div class="media-wrap col-md-8 col-12">
                     <a href="https://mobiri.se/">
-                        <img src="assets/images/bold-397x220.png" alt="Mobirise">
+                        <img src="/assets/images/bold-397x220.png" alt="Mobirise">
                     </a>
                 </div>
             </div>
@@ -75,7 +75,7 @@
         </div>
     </div>
 </section>
-<section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/k" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Mobirise page maker - <a href="https://mobirise.site/n" style="color:#aaa;">Click for more</a></p></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/dropdown/js/navbar-dropdown.js"></script>  <script src="assets/theme/js/script.js"></script>
+<section style="background-color: #fff; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif; color:#aaa; font-size:12px; padding: 0; align-items: center; display: flex;"><a href="https://mobirise.site/k" style="flex: 1 1; height: 3rem; padding-left: 1rem;"></a><p style="flex: 0 0 auto; margin:0; padding-right:1rem;">Mobirise page maker - <a href="https://mobirise.site/n" style="color:#aaa;">Click for more</a></p></section><script src="/assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="/assets/smoothscroll/smooth-scroll.js"></script>  <script src="/assets/ytplayer/index.js"></script>  <script src="/assets/dropdown/js/navbar-dropdown.js"></script>  <script src="/assets/theme/js/script.js"></script>
 
 
 </body>
