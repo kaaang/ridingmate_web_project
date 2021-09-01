@@ -14,10 +14,10 @@ spring:
       suffix: .jsp
 
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/rmc?serverTimezone=Asia/Seoul
-    username: rmc
-    password: rmc1234
+    driver-class-name: org.mariadb.jdbc.Driver
+    url: jdbc:mariadb://183.111.242.24:3306/tlsgur39
+    username: tlsgur39
+    password: kksy0309!
 
   jpa:
     open-in-view: true
