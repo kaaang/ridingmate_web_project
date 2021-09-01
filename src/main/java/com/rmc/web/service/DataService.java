@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 @Service
 public class DataService {
@@ -29,6 +30,7 @@ public class DataService {
 
 
 
+
         BikeCompany bikeCompany =bikeCompanyRepository.findByCompany(bike_spec.getCompany()).orElseGet(()->{
             BikeCompany company = BikeCompany.builder().company(bike_spec.getCompany()).build();
             bikeCompanyRepository.save(company);
@@ -44,8 +46,15 @@ public class DataService {
         });
 
 
+
         bike_spec.setBikeModel(bikeModel);
-        bikeSpecRepository.save(bike_spec);
+        Bike_spec spec = bikeSpecRepository.findByYearAndBikeModel(bike_spec.getYear(),bike_spec.getBikeModel()).orElseGet(()->{
+            bikeSpecRepository.save(bike_spec);
+            return bike_spec;
+        });
+
+
+
 
 
 

@@ -14,13 +14,17 @@
             totalcount=bikedata.length;
             Loof = setInterval(function () {
                 goodajax();
-            },1000);
+            },500);
 
         });
 
 
 
         function goodajax() {
+            count++;
+            start();
+        }
+        function start(){
             $.ajax({
                 type:"POST",
                 url:"http://localhost:8000/auth/data",
@@ -28,7 +32,6 @@
                 contentType:"application/json;charset=utf-8",
                 dataType:"JSON"
             }).done(function (resp) {
-                count++;
                 if(count>=totalcount){
                     clearInterval(Loof);
                 }
@@ -36,6 +39,7 @@
 
             }).fail(function (err) {
                 console.log(count+" 번째 데이터 실패*********\n");
+                console.log(bikedata[count]);
                 clearInterval(Loof);
             })
         }
