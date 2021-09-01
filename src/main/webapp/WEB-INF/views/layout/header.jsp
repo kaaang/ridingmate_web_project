@@ -39,6 +39,7 @@
 	<link rel="stylesheet" href="/assets/theme/css/style.css">
 	<link href="/assets/fonts/style.css" rel="stylesheet">
 	<link rel="preload" as="style" href="/assets/mobirise/css/mbr-additional.css">
+	<link rel="stylesheet"  href="/assets/mobirise/css/customCss.css" type="text/css">
 	<link rel="stylesheet" href="/assets/mobirise/css/mbr-additional.css" type="text/css">
 
 
@@ -76,6 +77,7 @@
 							<a class="btn btn-primary display-4" href="/auth/loginForm">로그인</a>
 						</c:when>
 						<c:otherwise>
+							<a class="btn btn-primary-outline display-4" href="/detailForm">내정보</a>
 							<a class="btn btn-primary display-4" href="/logout">로그아웃</a>
 						</c:otherwise>
 					</c:choose>

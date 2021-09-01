@@ -1,5 +1,5 @@
 body {
-  font-family: Jost;
+  font-family: 'CookieRun Regular';
 }
 .display-1 {
   font-family: 'CookieRun Regular';
@@ -1173,7 +1173,7 @@ a {
   height: 40px;
   border-radius: 50%;
   margin-top: 5px;
-  content: "✓";
+  content: "�쐯";
 }
 .cid-sHcfevB0xR {
   padding-top: 5rem;
@@ -1270,6 +1270,36 @@ a {
   width: 100%;
 }
 .cid-sHbevW3ksg form.mbr-form .mbr-section-btn .btn {
+  width: 100%;
+}
+.cid-sHbevW3ksgk {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.cid-sHbevW3ksgk .mbr-overlay {
+  background-color: #ffffff;
+  opacity: 0.4;
+}
+.cid-sHbevW3ksgk form.mbr-form {
+  border-radius: 10px;
+  background-color: #fafafa;
+}
+@media (min-width: 992px) {
+  .cid-sHbevW3ksgk form.mbr-form {
+    padding: 3rem 2rem;
+    width: 60%;
+  }
+}
+@media (max-width: 991px) {
+  .cid-sHbevW3ksgk form.mbr-form {
+    padding: 1rem;
+  }
+}
+.cid-sHbevW3ksgk form.mbr-form .mbr-section-btn {
+  text-align: center;
+  width: 100%;
+}
+.cid-sHbevW3ksgk form.mbr-form .mbr-section-btn .btn {
   width: 100%;
 }
 .cid-sHcdQkIXSP {
