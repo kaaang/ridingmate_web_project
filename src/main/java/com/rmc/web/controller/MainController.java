@@ -28,7 +28,7 @@ public class MainController {
     //중고마켓
     @GetMapping("/market")
     public String market() {
-    	return "";
+    	return "board/board";
     }
     
     //고객센터
