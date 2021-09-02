@@ -1302,6 +1302,17 @@ a {
 .cid-sHbevW3ksgk form.mbr-form .mbr-section-btn .btn {
   width: 100%;
 }
+.cid-sHbevW3ksg span.id_ok{
+	display: none;
+}
+.cid-sHbevW3ksg span.id_already{
+	display: none;
+}
+.cid-sHbevW3ksg btn#btn-join{
+	display: none;
+}
+
+
 .cid-sHcdQkIXSP {
   z-index: 1000;
   width: 100%;

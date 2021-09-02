@@ -96,7 +96,7 @@
 				</form>
 
 				<div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-					<button id="btn-join" class="btn btn-primary display-4 disabled">회원가입</button>
+					<button id="btn-join" class="btn btn-primary display-4">회원가입</button>
 				</div>
 			</div>
 		</div>
