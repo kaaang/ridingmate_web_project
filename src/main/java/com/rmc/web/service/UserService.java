@@ -38,16 +38,41 @@ public class UserService {
     		return new IllegalArgumentException("회원찾기 실패");
     	});
     	
-    	String rawPassword = user.getPassword();
-        String encPassword = encoder.encode(rawPassword);
-        
+    	System.out.println("현재의 비밀번호"+persistance.getPassword());
+    	
+    	String pass=null;
+    	if(user.getPassword().equals("")) {
+    		pass=persistance.getPassword();
+    		System.out.println("적용될 비밀번호1"+pass);
+    	}else {
+    		String rawPassword = user.getPassword();
+    		pass = encoder.encode(rawPassword);
+    		System.out.println("적용될 비밀번호2"+pass);
+    		persistance.setPassword(pass);
+    	}
+    	//user.setPassword(pass);
+    	
         persistance.setUserstring(user.getUserstring());
-        persistance.setPassword(encPassword);
         persistance.setNickname(user.getNickname());
         persistance.setPhone(user.getPhone());
         persistance.setEmail(user.getEmail());
         
         
+    }
+    
+    @Transactional
+    public int passChk(String rawpass, int id) {
+    	String encpass=userRepository.findPasswordById(id).orElseThrow(()->{
+    		return new IllegalArgumentException("비밀번호 찾기 실패");
+    	});
+    	
+    	if(encoder.matches(rawpass, encpass)){
+    		return 1; //비밀번호 일치
+    	}else{
+    		return 0; //비밀번호 불일치
+    	}
+
+    	
     }
 
 }

@@ -26,6 +26,12 @@ public class UserController {
 	}
 	
 	// 회원가입폼
+	@GetMapping("/passwordForm")
+	public String passwordForm() {
+		return "user/passwordForm";
+	}
+	
+	// 회원가입폼
 	@GetMapping("/detailForm")
 	public String detailForm() {
 		return "user/detailForm";

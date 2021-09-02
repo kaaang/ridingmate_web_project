@@ -13,6 +13,9 @@ let index={
         $("#btn-update").on("click",()=>{
             this.update();
         });
+        $("#btn-passChk").on("click",()=>{
+            this.passChk();
+        });
     },
     
     
@@ -40,6 +43,34 @@ let index={
         });
     },
     
+    
+    
+	passChk:function(){
+	 	let data = {
+			id:$("#id").val(),
+            password:$("#password").val()
+        };
+        
+        console.log(data);
+
+        $.ajax({
+            type:"POST",
+            url:"/passChk",
+            data:JSON.stringify(data),
+            contentType:"application/json;charset=utf-8",
+            dataType:"json"
+        }).done(function(resp){
+			if(resp==1){
+				location.href="	/detailForm";
+			}else{
+				alert("비밀번호가 일치하지 않습니다\n다시 확인하여 주세요");	
+			}
+        	
+        }).fail(function(err){
+            alert(JSON.stringify(err));
+        });
+	},
+    
     update:function (){
 		let data = {
 			id:$("#id").val(),
@@ -48,11 +79,13 @@ let index={
             password:$("#password").val(),
             nickname:$("#nickname").val(),
             phone:$("#phone").val(),
-            email:$("#email").val(),
+            email:$("#email").val()
         };
 	
-	
-		if(this.inputEmptyChk()){
+		if(this.inputEmptyChk2()){
+			
+			console.log(data.password);
+			
 			$.ajax({
             type:"PUT",
             url:"/user",
@@ -66,8 +99,6 @@ let index={
 	            alert(JSON.stringify(err));
 	        });
 		}
-	
-        
 
         
     },
@@ -96,10 +127,18 @@ let index={
 		});
 	},
 	
-	//input 공란 처리
+	//input 공란 처리(join 용)
 	inputEmptyChk:function(){
 			if($("#userstring").val().length==0){alert("이름을 입력하세요"); $("#userstring").focus(); return false}
 			if($("#password").val().length==0){alert("비밀번호를 입력하세요"); $("#password").focus(); return false}
+			if($("#nickname").val().length==0){alert("닉네임을 입력하세요"); $("#nickname").focus(); return false}
+			if($("#phone").val().length==0){alert("핸드폰 번호를 입력하세요"); $("#phone").focus(); return false}
+			if($("#email").val().length==0){alert("이메일을 입력하세요"); $("#email").focus(); return false}
+			return true;
+	},
+	//input 공란 처리(detail 용 - 비밀번호 없이도 통과할수 있도록)
+	inputEmptyChk2:function(){
+			if($("#userstring").val().length==0){alert("이름을 입력하세요"); $("#userstring").focus(); return false}
 			if($("#nickname").val().length==0){alert("닉네임을 입력하세요"); $("#nickname").focus(); return false}
 			if($("#phone").val().length==0){alert("핸드폰 번호를 입력하세요"); $("#phone").focus(); return false}
 			if($("#email").val().length==0){alert("이메일을 입력하세요"); $("#email").focus(); return false}

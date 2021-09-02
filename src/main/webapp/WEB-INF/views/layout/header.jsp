@@ -81,7 +81,7 @@
 							<a class="btn btn-primary display-4" href="/auth/loginForm">로그인</a>
 						</c:when>
 						<c:otherwise>
-							<a class="btn btn-primary-outline display-4" href="/detailForm">내정보</a>
+							<a class="btn btn-primary-outline display-4" href="/passwordForm">내정보</a>
 							<a class="btn btn-primary display-4" href="/logout">로그아웃</a>
 						</c:otherwise>
 					</c:choose>

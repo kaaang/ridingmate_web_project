@@ -35,10 +35,26 @@ public class UserApiController {
     public ResponseDto<Integer> update(@RequestBody User user){
     	userService.update(user);
     	
-        //세션 등록
-        Authentication authentication=authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
-        SecurityContextHolder.getContext().setAuthentication(authentication);
+    	System.out.println("세션에 등록해야하는 아이디는"+user.getUsername());
+    	System.out.println("세션에 등록해야하는 비밀번호는"+user.getPassword());
+    	
+    	if(user.getPassword().equals("")) {
+    		
+    	}else {
+    		//세션 등록
+    		Authentication authentication=authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+    		SecurityContextHolder.getContext().setAuthentication(authentication);
+    		
+    	}
+    	
+    	
     	return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+    }
+    
+    @PostMapping("/passChk")
+    public @ResponseBody int passChk(@RequestBody User user) {
+    	int result=userService.passChk(user.getPassword(), user.getId());
+    	return result;
     }
     
 
