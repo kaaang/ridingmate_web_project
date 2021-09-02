@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 @Service
@@ -61,6 +62,11 @@ public class DataService {
 
 
         return 1;
+    }
+
+    @Transactional
+    public List<BikeCompany> search(){
+        return bikeCompanyRepository.findAll();
     }
 
 }

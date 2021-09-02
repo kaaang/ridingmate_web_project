@@ -1,5 +1,6 @@
 package com.rmc.web.model.bike;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -25,6 +26,7 @@ public class BikeCompany {
 
 
     @OneToMany(fetch = FetchType.EAGER)
+    @JsonBackReference
     @JoinColumn(name = "bikecompany_id")
     private List<BikeModel> bikeModels;
 
