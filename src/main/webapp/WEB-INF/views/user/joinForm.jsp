@@ -23,8 +23,11 @@
 						<div class="col-12 form-group mb-3" data-for="name">
 							<label class="display-7 csLabel">이름</label> <input type="text" name="userstring" placeholder="이름" class="form-control" value="" id="userstring">
 						</div>
-						<div class="col-12 form-group mb-3 " data-for="name">
-							<label class="display-7 csLabel">아이디</label> <input type="text" name="username" placeholder="아이디" class="form-control" value="" id="username">
+						<div class="col-12 form-group mb-3" data-for="name">
+							<input type="text" name="username" placeholder="아이디" class="form-control" value="" id="username"> 
+							<span class="id_ok text-danger">사용 가능한 아이디입니다.</span> 
+							<span class="id_already text-primary">사용중인 ID입니다.</span>
+
 						</div>
 						<div class="col-12 form-group mb-3" data-for="name">
 							<label class="display-7 csLabel">비밀번호</label> <input type="password" name="password" placeholder="8자리 이상 입력해주세요" class="form-control" value="" id="password">
@@ -51,14 +54,14 @@
 	</div>
 	<div class="container">
 		<div class="row justify-content-center mt-4">
-			<h4 class="align-center" >
-			<strong>서비스 약관에 동의하여 주세요</strong><br><br>
+			<h4 class="align-center">
+				<strong>서비스 약관에 동의하여 주세요</strong><br> <br>
 			</h4>
 			<div class="col-lg-12 mx-auto mbr-form" data-form-type="formoid">
 				<form class="mbr-form form-with-styler mx-auto">
-			
+
 					<div class="dragArea row">
-					
+
 						<ul>
 							<li class="checkBox check01">
 								<ul class="clearfix">
@@ -70,24 +73,21 @@
 								<ul class="clearfix">
 									<li>이용약관 동의(필수)</li>
 									<li class="checkBtn"><input type="checkbox" name="chk" id="chk1"></li>
-								</ul> 
-								<textarea id="agreement1" rows=6 data-form-field="textarea" class="form-control text-muted" readonly>
+								</ul> <textarea id="agreement1" rows=6 data-form-field="textarea" class="form-control text-muted" readonly>
 				     	  		</textarea>
 							</li>
 							<li class="checkBox check03">
 								<ul class="clearfix">
 									<li>개인정보 수집 및 이용에 대한 안내(필수)</li>
 									<li class="checkBtn"><input type="checkbox" name="chk" id="chk2"></li>
-								</ul> 
-								<textarea id="agreement2" rows=6 data-form-field="textarea" class="form-control text-muted" readonly>
+								</ul> <textarea id="agreement2" rows=6 data-form-field="textarea" class="form-control text-muted" readonly>
 				     	  		</textarea>
 							</li>
 							<li class="checkBox check03">
 								<ul class="clearfix">
 									<li>위치정보 이용약관 동의(선택)</li>
 									<li class="checkBtn"><input type="checkbox" name="chk" id="chk3"></li>
-								</ul> 
-								<textarea id="agreement3" rows=6 data-form-field="textarea" class="form-control text-muted" readonly>
+								</ul> <textarea id="agreement3" rows=6 data-form-field="textarea" class="form-control text-muted" readonly>
 				     	  		</textarea>
 							</li>
 						</ul>
@@ -96,7 +96,7 @@
 				</form>
 
 				<div class="col-lg-12 col-md-12 col-sm-12 align-center mbr-section-btn">
-					<button id="btn-join" class="btn btn-primary display-4">회원가입</button>
+					<button id="btn-join" class="btn btn-primary display-4 disabled">회원가입</button>
 				</div>
 			</div>
 		</div>
