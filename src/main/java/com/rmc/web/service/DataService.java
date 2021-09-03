@@ -1,12 +1,9 @@
 package com.rmc.web.service;
 
 
-import com.rmc.web.model.bike.BikeCompany;
-import com.rmc.web.model.bike.BikeModel;
-import com.rmc.web.model.bike.Bike_spec;
-import com.rmc.web.repository.BikeCompanyRepository;
-import com.rmc.web.repository.BikeModelRepository;
-import com.rmc.web.repository.BikeSpecRepository;
+import com.rmc.web.model.bike.*;
+import com.rmc.web.model.user.User;
+import com.rmc.web.repository.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,6 +21,12 @@ public class DataService {
 
     @Autowired
     private BikeSpecRepository bikeSpecRepository;
+
+    @Autowired
+    private BikeRepository bikeRepository;
+
+    @Autowired
+    private MybikeRepository mybikeRepository;
 
     @Transactional
     public int serch(Bike_spec bike_spec){
@@ -71,5 +74,35 @@ public class DataService {
         return specs;
     }
 
+    public int save(Mybike mybike, User user, String companyName, String model, String year){
+        BikeCompany bikeCompany=bikeCompanyRepository.findByCompany(companyName).orElseGet(()->{
+            return null;
+        });
+
+        BikeModel bikeModel = bikeModelRepository.findByBikeCompanyAndModel(bikeCompany,model).orElseGet(()->{
+            return null;
+        });
+
+        Bike_spec spec = bikeSpecRepository.findByYearAndBikeModel(year,bikeModel).orElseGet(()->{
+            return null;
+        });
+
+        if (bikeCompany==null||bikeModel==null||spec==null){
+            return -1;
+        }else{
+            Bike bike=new Bike();
+            bike.setBikeCompany(bikeCompany);
+            bike.setBikeModel(bikeModel);
+            bike.setBike_spec(spec);
+            bikeRepository.save(bike);
+
+            mybike.setBike(bike);
+            mybike.setUser(user);
+            mybikeRepository.save(mybike);
+
+            return 1;
+        }
+
+    }
 
 }

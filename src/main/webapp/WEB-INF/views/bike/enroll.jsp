@@ -75,20 +75,44 @@
                 $("#year").append("<option>"+"year 정보 불러오기 실패"+"</option>");
             })
         }
+        function putMyBike(){
+
+            // console.log($("#company option:selected").val());
+            let mybikeJson={
+                "nickname":$("#nickname").val(),
+                "mileage":$("#mileage").val(),
+                "purchase":$("#purchase").val(),
+            }
+            let url ="http://localhost:8000/auth/insertmybike?companyName="+$("#company option:selected").val()+"&model="+$("#model option:selected").val()+"&year="+$("#year option:selected").val();
+            $.ajax({
+                type:"PUT",
+                url:url,
+                data:JSON.stringify(mybikeJson),
+                contentType:"application/json;charset=utf-8",
+                dataType:"JSON"
+            }).done(function (resp) {
+                // console.log(resp);
+
+            }).fail(function (err) {
+                console.log("year 정보 불러오기 실패");
+
+            })
+        }
 
         function init() {
             $("#company").change(function() {getmodel();});
             $("#model").change(function() {getyear();});
+            $("#button").click(function () {putMyBike()});
         }
     </script>
 </head>
 <body>
 <select id="company"></select><br><br>
-<select id="model">
-    <option>모델을 선택 해 주세요</option>
-</select><br><br>
-<select id="year">
-    <option>연식을 선택 해 주세요</option>
-</select>
+<select id="model"><option>모델을 선택 해 주세요</option></select><br><br>
+<select id="year"><option>연식을 선택 해 주세요</option></select><br><br>
+<textarea id="nickname" placeholder="닝네임"></textarea><br><br>
+<textarea id="mileage" placeholder="마일리지"></textarea><br><br>
+<textarea id="purchase" placeholder="언제샀냐?"></textarea><br><br>
+<button id="button">안녕? 나는 버튼</button>
 </body>
 </html>

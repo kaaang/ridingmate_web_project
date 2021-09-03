@@ -1,14 +1,16 @@
 package com.rmc.web.controller.bike;
 
+import com.rmc.web.config.auth.PrincipalDetail;
+import com.rmc.web.dto.ResponseDto;
 import com.rmc.web.model.bike.BikeCompany;
 import com.rmc.web.model.bike.BikeModel;
 import com.rmc.web.model.bike.Bike_spec;
+import com.rmc.web.model.bike.Mybike;
+import com.rmc.web.model.user.User;
 import com.rmc.web.service.DataService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -36,7 +38,13 @@ public class bikeApiController {
         return result;
     }
 
+    @PutMapping("/auth/insertmybike")
+    public int save(@AuthenticationPrincipal PrincipalDetail principal, @RequestBody Mybike mybike, @RequestParam String companyName, @RequestParam String model, @RequestParam String year){
+        User user = principal.getUser();
+        int result = dataService.save(mybike,user,companyName,model,year);
 
+        return result;
+    }
 
 
 }
