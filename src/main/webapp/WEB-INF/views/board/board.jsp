@@ -9,7 +9,7 @@
 <%@include file="../layout/header.jsp"%>
 <br>
 
-<!-- <form>
+<form>
     <div class="custom-control custom-switch" style="margin-left: 10%">
         <a href="/board/write"><button type="button" class="btn btn-outline-primary">글쓰기</button></a>>
         <input type="checkbox" class="custom-control-input" id="switch1">
@@ -43,37 +43,28 @@
             <option value="fiat">Fiat</option>
             <option value="audi">Audi</option>
         </select>
+		<select name="cars" class="custom-select">
+			<option selected>지역</option>
+			<option value="volvo">Volvo</option>
+			<option value="fiat">Fiat</option>
+			<option value="audi">Audi</option>
+		</select>
+		<select name="cars" class="custom-select">
+			<option selected>직거래</option>
+			<option value="volvo">Volvo</option>
+			<option value="fiat">Fiat</option>
+			<option value="audi">Audi</option>
+		</select>
+		<select name="cars" class="custom-select">
+			<option selected>적산거리</option>
+			<option value="volvo">Volvo</option>
+			<option value="fiat">Fiat</option>
+			<option value="audi">Audi</option>
+		</select>
     </div>
 </form>
 
-<div class="container">
-    <br>
 
-    <div class="card" style="width:300px;height: 500px;border: 1px solid black">
-        <img class="card-img-top" src="/img/1.jpg" alt="Card image" style="width:100%;height: 50%;margin: auto"/>
-        <div class="card-body">
-
-            <h4 class="card-title">제목 나올곳</h4>
-            <h6 class="card-title">회사명</h6>
-            <h6 class="card-title">모델</h6>
-            <h6 class="card-title">연식</h6>
-            <h6 class="card-title">지역</h6>
-            <h6 class="card-title">가격</h6>
-            <h6 class="card-title">작성자</h6>
-            <h6 class="card-title">작성시간</h6>
-            <h6 class="card-title">조회수</h6>
-            <a href="#" class="stretched-link"></a>
-        </div>
-    </div>
-
-
-    <ul class="pagination justify-content-center">
-        <li class="page-item disabled"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-        <li class="page-item disabled"><a class="page-link" href="#">Next</a></li>
-        <li class="page-item"><a class="page-link" href="#">Next</a></li>
-    </ul>
-</div> -->
 
 <section data-bs-version="5.1" class="features3 cid-sHOtT9Yg33" id="features3-27">
 
@@ -81,7 +72,7 @@
 	<div class="container">
 		<div class="mbr-section-head">
 			<h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2">
-				<strong>Features</strong>
+				<strong>중고 거래</strong>
 			</h4>
 
 		</div>
@@ -93,12 +84,29 @@
 					</div>
 					<div class="item-content">
 						<h5 class="item-title mbr-fonts-style display-7">
-							<strong>No Coding</strong>
+							<strong>제목</strong>
 						</h5>
 						<h6 class="item-subtitle mbr-fonts-style mt-1 display-7">
-							<em>Card Subtitle</em>
+							<em>가격 : </em>
 						</h6>
-						<p class="mbr-text mbr-fonts-style mt-3 display-7">Mobirise is an easy website builder. Just drop site elements to your page, add content and style it to look the way you like.</p>
+						<h7 class="item-subtitle mbr-fonts-style mt-1 display-7">
+							<em>제조사 : </em>
+						</h7><br>
+						<h7 class="item-subtitle mbr-fonts-style mt-1 display-7">
+							<em>모델명 : </em>
+						</h7><br>
+						<h7 class="item-subtitle mbr-fonts-style mt-1 display-7">
+							<em>연식 : </em>
+						</h7><br>
+						<h7 class="item-subtitle mbr-fonts-style mt-1 display-7">
+							<em>적산거리 : </em>
+						</h7><br>
+						<h7 class="item-subtitle mbr-fonts-style mt-1 display-7">
+							<em>색상 : </em>
+						</h7><br>
+						<h7 class="item-subtitle mbr-fonts-style mt-1 display-7">
+							<em>지역 : </em>
+						</h7>
 					</div>
 
 				</div>
