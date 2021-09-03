@@ -19,28 +19,34 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class UserApiController {
 
-    @Autowired
-    private UserService userService;
-    
-    @Autowired
-    private AuthenticationManager authenticationManager;
+	@Autowired
+	private UserService userService;
 
-    @PostMapping("/auth/joinProc")
-    public ResponseDto<Integer> save(@RequestBody User user){
-        userService.join(user);
-        return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
-    }
-    
-    @PutMapping("/user")
-    public ResponseDto<Integer> update(@RequestBody User user){
-    	userService.update(user);
-    	
-        //세션 등록
-        Authentication authentication=authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
-        SecurityContextHolder.getContext().setAuthentication(authentication);
-    	return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
-    }
-    
+	@Autowired
+	private AuthenticationManager authenticationManager;
 
+	@PostMapping("/auth/joinProc")
+	public ResponseDto<Integer> save(@RequestBody User user) {
+		userService.join(user);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+	}
 
+	
+
+	@PutMapping("/user")
+	public ResponseDto<Integer> update(@RequestBody User user) {
+		userService.update(user);
+
+		// 세션 등록
+		Authentication authentication = authenticationManager
+				.authenticate(new UsernamePasswordAuthenticationToken(user.getUsername(), user.getPassword()));
+		SecurityContextHolder.getContext().setAuthentication(authentication);
+		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+	}
+	
+//	@PostMapping("/auth/join/idCheck")
+//	public ResponseDto<Integer> idCheck(@RequestBody User user) {
+//		userService.idCheck(user);
+//		return new ResponseDto<Integer>(HttpStatus.OK.value(), 1);
+//	}
 }

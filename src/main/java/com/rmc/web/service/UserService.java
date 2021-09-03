@@ -8,8 +8,12 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
+import java.util.logging.Logger;
 
 import javax.transaction.Transactional;
 
@@ -31,6 +35,33 @@ public class UserService {
         user.setRole(RoleType.USER);
         userRepository.save(user);
     }
+    
+
+	/*
+	 * @Transactional public Boolean idCheck(User user) { //true = 데이터 없음 return
+	 * userRepository.findByUsernameint(user.getUsername()).orElse(true); }
+	 */
+    
+    
+	
+//	 @Transactional 
+//	 public int idCheck(User username) { //true = 데이터 없음 return
+//		 userRepository.findByUsernameint(username); 
+//	}
+	 
+    @Transactional
+	 public int idCheck(User user) {
+		 User checkUser = userRepository.findByUsername(user.getUsername()).orElseGet(()->{
+			 return new User();
+		 });
+		 if(checkUser.getUsername()=="" || checkUser.getUsername()==null) {
+			 return 1;
+		 }else {
+			 return 0;
+		 }
+	 }
+	 
+    
     
     @Transactional
     public void update(User user) {
