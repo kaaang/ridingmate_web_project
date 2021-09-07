@@ -5,7 +5,7 @@ $(document).ready(function() {
 	//index.inputEmptyChk();
 	/*	index.idCheck();*/
 });
-$('#username').keyup(function(){
+$('#username').keyup(function() {
 	index.idCheck();
 });
 
@@ -20,6 +20,9 @@ let index = {
 				});*/
 		$("#btn-update").on("click", () => {
 			this.update();
+		});
+		$("#btn-passChk").on("click", () => {
+			this.passChk();
 		});
 	},
 
@@ -49,40 +52,40 @@ let index = {
 	},
 
 
-/*
-	idCheck: $('#username').keyup(function() {
-			// ajax 실행
-			$.ajax({
-				type: 'POST',
-				url: "/auth/join/idCheck",
-				data:
-				{
-					"username": $("#username").val()
-				},
-				dataType:"json",
-				success: function(data) {
-					//console.log(result);
-					if ($.trim(data) == "YES") {
-						$("#idCheckMsg").html("사용 가능한 아이디 입니다.");
-					} else {
-						if ($('#username').val() != '') {
-							 $('#username').val('');
-							$("#idCheckMsg").html("사용 불가능한 아이디 입니다.");
+	/*
+		idCheck: $('#username').keyup(function() {
+				// ajax 실행
+				$.ajax({
+					type: 'POST',
+					url: "/auth/join/idCheck",
+					data:
+					{
+						"username": $("#username").val()
+					},
+					dataType:"json",
+					success: function(data) {
+						//console.log(result);
+						if ($.trim(data) == "YES") {
+							$("#idCheckMsg").html("사용 가능한 아이디 입니다.");
+						} else {
+							if ($('#username').val() != '') {
+								 $('#username').val('');
+								$("#idCheckMsg").html("사용 불가능한 아이디 입니다.");
+							}
 						}
 					}
-				}
-			}); // end ajax
-	
-	}), // end keyup
-	
-	*/
-	
-	idCheck:function(){
+				}); // end ajax
+		
+		}), // end keyup
+		
+		*/
+
+	idCheck: function() {
 		let data = {
-			username : $("#username").val()
+			username: $("#username").val()
 		};
 		console.log(data);
-		
+
 		$.ajax({
 			type: "POST",
 			url: "/auth/join/idCheck",
@@ -91,20 +94,46 @@ let index = {
 			dataType: "json"
 		}).done(function(resp) {
 			console.log(resp);
-			if(resp==1){
-				$(".id_ok").css("display","inline-block");
-				$(".id_already").css("display", "none");	
-				$("#btn-save").css("display","inline-block");
-			}else{
-				$(".id_ok").css("display", "none");	
-				$(".id_already").css("display","inline-block");
+			if (resp == 1) {
+				$(".id_ok").css("display", "inline-block");
+				$(".id_already").css("display", "none");
+				$("#btn-save").css("display", "inline-block");
+			} else {
+				$(".id_ok").css("display", "none");
+				$(".id_already").css("display", "inline-block");
 			}
-	
+
 		}).fail(function(err) {
 			alert(JSON.stringify(err));
 		});
 	},
 
+
+	passChk: function() {
+		let data = {
+			id: $("#id").val(),
+			password: $("#password").val()
+		};
+
+		console.log(data);
+
+		$.ajax({
+			type: "POST",
+			url: "/passChk",
+			data: JSON.stringify(data),
+			contentType: "application/json;charset=utf-8",
+			dataType: "json"
+		}).done(function(resp) {
+			if (resp == 1) {
+				location.href = "	/detailForm";
+			} else {
+				alert("비밀번호가 일치하지 않습니다\n다시 확인하여 주세요");
+			}
+
+		}).fail(function(err) {
+			alert(JSON.stringify(err));
+		});
+	},
 
 
 
@@ -164,10 +193,18 @@ let index = {
 		});
 	},
 
-	//input 공란 처리
+	//input 공란 처리(join 용)
 	inputEmptyChk: function() {
 		if ($("#userstring").val().length == 0) { alert("이름을 입력하세요"); $("#userstring").focus(); return false }
 		if ($("#password").val().length == 0) { alert("비밀번호를 입력하세요"); $("#password").focus(); return false }
+		if ($("#nickname").val().length == 0) { alert("닉네임을 입력하세요"); $("#nickname").focus(); return false }
+		if ($("#phone").val().length == 0) { alert("핸드폰 번호를 입력하세요"); $("#phone").focus(); return false }
+		if ($("#email").val().length == 0) { alert("이메일을 입력하세요"); $("#email").focus(); return false }
+		return true;
+	},
+	//input 공란 처리(detail 용 - 비밀번호 없이도 통과할수 있도록)
+	inputEmptyChk2: function() {
+		if ($("#userstring").val().length == 0) { alert("이름을 입력하세요"); $("#userstring").focus(); return false }
 		if ($("#nickname").val().length == 0) { alert("닉네임을 입력하세요"); $("#nickname").focus(); return false }
 		if ($("#phone").val().length == 0) { alert("핸드폰 번호를 입력하세요"); $("#phone").focus(); return false }
 		if ($("#email").val().length == 0) { alert("이메일을 입력하세요"); $("#email").focus(); return false }
