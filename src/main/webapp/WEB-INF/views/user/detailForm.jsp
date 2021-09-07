@@ -30,7 +30,7 @@
 							<input type="text" name="username" class="form-control" value="${principal.getUsername()}" id="username" readonly>
 						</div>
 						<div class="col-12 form-group mb-3" data-for="name">
-							<label class="display-7 csLabel">비밀번호</label> 
+							<label class="display-7 csLabel">신규 비밀번호</label> 
 							<input type="password" name="password" placeholder="8자리 이상 입력해주세요" class="form-control"   id="password" >
 						</div>
 						<div class="col-12 form-group mb-3" data-for="name">
