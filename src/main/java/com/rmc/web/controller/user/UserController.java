@@ -35,6 +35,12 @@ public class UserController {
 		return "user/joinForm";
 	}
 	
+	//내정보용 비밀번호 확인폼
+	@GetMapping("/passwordForm")
+	public String passwordForm() {
+		return "user/passwordForm";
+	}
+	
 	// 회원 정보
 	@GetMapping("/detailForm")
 	public String detailForm() {
