@@ -23,7 +23,7 @@ public class Mybike {
     private int id;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "userId")
     private User user;
 
     @Column(nullable = true, length = 100)
@@ -45,6 +45,7 @@ public class Mybike {
     private String purchase;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "bike_id")
+    @JsonBackReference
+    @JoinColumn(name = "bikeId")
     private Bike bike;
 }

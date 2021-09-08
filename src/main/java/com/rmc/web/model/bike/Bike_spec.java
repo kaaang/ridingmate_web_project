@@ -101,7 +101,7 @@ public class Bike_spec {
     @Column(nullable = true, length = 200)
     private String carrying_capacity;
 
-    @Column(nullable = true, length = 200)
+    @Lob
     private String instruments;
 
     @Column(nullable = true, length = 200)

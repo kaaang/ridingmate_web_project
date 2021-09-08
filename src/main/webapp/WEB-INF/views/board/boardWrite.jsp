@@ -9,6 +9,7 @@
 <%@include file="../layout/header.jsp"%>
 <section data-bs-version="5.1" class="form7 cid-sHbevW3ksgk" id="form7-s">
 
+
 	<div class="container">
 		<div class="mbr-section-head">
 			<div class="mbr-section-head">
@@ -16,34 +17,30 @@
 					<strong>글쓰기</strong>
 				</h3>
 			</div>
-			<div class="row justify-content-center mt-4">
-				<div class="col-lg-12 mx-auto mbr-form" data-form-type="formoid">
-					<form>
-						<br>
-						<div class="form-group" style="width: 80%">
-							<input type="text" class="form-control" placeholder="Enter title" id="title">
+
+
+			<div class="container mt-3">
+				<form>
+					<div class="input-group mb-3">
+						<div class="input-group-prepend">
+							<span class="input-group-text">제목</span>
 						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="제조사" id="a">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="모델명" id="b">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="배기량(숫자만 입력)" id="c">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="연식" id="d">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="적산 거리" id="e">
-						</div>
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="색상" id="f">
-						</div>
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="가격" id="g">
+						<input type="text" class="form-control">
+					</div>
+				</form>
+			</div>
+
+			<div class="container">
+					<button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+							바이크 선택
+					</button>
+					<div class="dropdown-menu">
+						<c:forEach var="bike" items="${bikeList}">
+							<a class="dropdown-item" href="/board/write/bikeselect">${bike.nickname}</a>
+						</c:forEach>
+					</div>
 				</div>
+			</div>
 
 
 				<div class="form-group">
@@ -67,5 +64,5 @@
 		height : 300
 	});
 </script>
-<script src="/js/board.js"></script>
+<script src="/js/boardWrite.js"></script>
 <%@include file="../layout/footer.jsp"%>
